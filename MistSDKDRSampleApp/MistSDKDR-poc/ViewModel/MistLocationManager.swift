@@ -8,26 +8,59 @@
 import Foundation
 import MistSDK
 
+/// Class (ViewModel) to provide a service to detect and handle indoorLocationManager Class
+///```
+/// Steps:
+/// 1. indoorLocationManager.
+/// 2. Ask for the permission and check the status.
+///     2.1 if permission granted we are good to go.
+///     2.2 otherwise Open settings and ask the permission.
+/// 3. Assign a deligate.
+/// 4. Start a scanning process with start()
+/// 4. implement didUpdateRelativeLocation.
+///     1. asign that to publishable variable mistPoint so that the class using this ViewModel can access it.
+/// 5. stop scanning when ever needed.
+/// (Refer documentation for the further details)
+///```
 class MistLocationManagerVM : NSObject,ObservableObject{
-    let indoorLocationManager = IndoorLocationManager.sharedInstance(MistConstants.mistAccessToken)
+    private let indoorLocationManager = IndoorLocationManager.sharedInstance(MistConstants.mistAccessToken)
     @Published var mistPoint : MistPoint?
     override init() {
         super.init()
         indoorLocationManager?.start(with: self)
     }
+    
+    /// This metod Stops the Scanning process
+    ///```
+    /// Examle:
+    /// 1. indoorLocationManager.
+    /// 2. obj.stopScanning()
+    ///```
+    func stopScanning(){
+        indoorLocationManager?.stop()
+    }
 }
 
 
+///delegate implementaion
 extension MistLocationManagerVM : IndoorLocationDelegate{
+    /// will get called when the map is changes while we move from one floor to another.
     func didUpdate(_ map: MistMap!) {
     }
     
+    /// will get called when the current location of the device gets updated it will return Mistpoint, with this one we can derive all the requied information like spatial coordinates, latitude and longidue and more.
     func didUpdateRelativeLocation(_ relativeLocation: MistPoint!) {
         mistPoint = relativeLocation
     }
+    
+    /// it will get called when there is an error occured. - it is optional one
     func didErrorOccur(with errorType: ErrorType, andMessage errorMessage: String!) {
         if(errorType ==  .noBeaconsDetected){
             mistPoint = nil
         }
+    }
+    
+    // it will get called when we recieved an organization information as a part of authendication via access token
+    func didReceivedOrgInfo(withTokenName tokenName: String!, andOrgID orgID: String!) {
     }
 }

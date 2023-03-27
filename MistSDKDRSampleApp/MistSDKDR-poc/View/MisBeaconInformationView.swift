@@ -1,4 +1,5 @@
 import SwiftUI
+///UI View to show the basic information of the MistPoint
 
 struct MistBeaconInformationView: View {
     @ObservedObject var mistLocationManagerVM = MistLocationManagerVM()
