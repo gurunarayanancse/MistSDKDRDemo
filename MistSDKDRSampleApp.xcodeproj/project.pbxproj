@@ -12,6 +12,9 @@
 		1AAE107C29CD8808004E84C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAE107B29CD8808004E84C1 /* Assets.xcassets */; };
 		1AAE107F29CD8808004E84C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAE107E29CD8808004E84C1 /* Preview Assets.xcassets */; };
 		1AAE109229CDC0F7004E84C1 /* MistLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE109129CDC0F7004E84C1 /* MistLocationManager.swift */; };
+		1ABF281529D6F7C700BFF114 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1ABF281429D6F7C700BFF114 /* Kingfisher */; };
+		1ABF281729D705F700BFF114 /* BeaconRelativePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF281629D705F700BFF114 /* BeaconRelativePosition.swift */; };
+		1ABF281929D7068500BFF114 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF281829D7068500BFF114 /* Utility.swift */; };
 		1ACE6F5629D1538600BC7369 /* MistConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACE6F5529D1538500BC7369 /* MistConstants.swift */; };
 		26C3CDD7CB656BFC054D8F8E /* Pods_MistSDKDRSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDF964ECAB67A0B79908BF4 /* Pods_MistSDKDRSampleApp.framework */; };
 /* End PBXBuildFile section */
@@ -23,6 +26,8 @@
 		1AAE107B29CD8808004E84C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AAE107E29CD8808004E84C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1AAE109129CDC0F7004E84C1 /* MistLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MistLocationManager.swift; sourceTree = "<group>"; };
+		1ABF281629D705F700BFF114 /* BeaconRelativePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconRelativePosition.swift; sourceTree = "<group>"; };
+		1ABF281829D7068500BFF114 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		1ACE6F5529D1538500BC7369 /* MistConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MistConstants.swift; sourceTree = "<group>"; };
 		B893BEB759CD9946D492FC7A /* Pods-MistSDKDRSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MistSDKDRSampleApp.release.xcconfig"; path = "Target Support Files/Pods-MistSDKDRSampleApp/Pods-MistSDKDRSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		BDDF964ECAB67A0B79908BF4 /* Pods_MistSDKDRSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MistSDKDRSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABF281529D6F7C700BFF114 /* Kingfisher in Frameworks */,
 				26C3CDD7CB656BFC054D8F8E /* Pods_MistSDKDRSampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +104,7 @@
 		1AAE108629CD8875004E84C1 /* MistSDKDR-poc */ = {
 			isa = PBXGroup;
 			children = (
+				1ABF280D29D6D85E00BFF114 /* Helpers */,
 				1AAE108929CD88A3004E84C1 /* ViewModel */,
 				1AAE108829CD889B004E84C1 /* View */,
 				1AAE108729CD8894004E84C1 /* Model */,
@@ -108,6 +115,7 @@
 		1AAE108729CD8894004E84C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1ABF281629D705F700BFF114 /* BeaconRelativePosition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +134,14 @@
 				1AAE109129CDC0F7004E84C1 /* MistLocationManager.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1ABF280D29D6D85E00BFF114 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1ABF281829D7068500BFF114 /* Utility.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		950D6FD83AE29F167F9BC881 /* Pods */ = {
@@ -155,6 +171,9 @@
 			dependencies = (
 			);
 			name = MistSDKDRSampleApp;
+			packageProductDependencies = (
+				1ABF281429D6F7C700BFF114 /* Kingfisher */,
+			);
 			productName = MistSDKDRSampleApp;
 			productReference = 1AAE107429CD8807004E84C1 /* MistSDKDRSampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +202,9 @@
 				Base,
 			);
 			mainGroup = 1AAE106B29CD8807004E84C1;
+			packageReferences = (
+				1ABF281329D6F7C700BFF114 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 1AAE107529CD8807004E84C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,7 +274,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ACE6F5629D1538600BC7369 /* MistConstants.swift in Sources */,
+				1ABF281729D705F700BFF114 /* BeaconRelativePosition.swift in Sources */,
 				1AAE107A29CD8807004E84C1 /* MisBeaconInformationView.swift in Sources */,
+				1ABF281929D7068500BFF114 /* Utility.swift in Sources */,
 				1AAE109229CDC0F7004E84C1 /* MistLocationManager.swift in Sources */,
 				1AAE107829CD8807004E84C1 /* MistSDKDRSampleAppApp.swift in Sources */,
 			);
@@ -388,12 +412,14 @@
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IndoorBlueDotExperience;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We want to scan the QR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -403,6 +429,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.waioz.Dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -422,12 +451,14 @@
 				DEVELOPMENT_TEAM = X8VHD2K5NF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IndoorBlueDotExperience;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We want to scan the QR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -437,6 +468,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.waioz.Dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -465,6 +499,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1ABF281329D6F7C700BFF114 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1ABF281429D6F7C700BFF114 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1ABF281329D6F7C700BFF114 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1AAE106C29CD8807004E84C1 /* Project object */;
 }
