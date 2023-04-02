@@ -13,7 +13,7 @@ struct MistBeaconInformationView: View {
                         mistLocationManagerVM.scaleX = (geometry.size.width) / Double((mistLocationManagerVM.mistMap?.width ?? 0))
                         mistLocationManagerVM.scaleY = (geometry.size.height) / Double((mistLocationManagerVM.mistMap?.height ?? 0))
                     }
-                }.background(Color.red)
+                }
                 Image(systemName: "person.fill").resizable()
                     .frame(width: 20,height: 20)
                     .position(x : mistLocationManagerVM.mistPoint?.relativeX ?? 0,y: mistLocationManagerVM.mistPoint?.relativeY ?? 0)
