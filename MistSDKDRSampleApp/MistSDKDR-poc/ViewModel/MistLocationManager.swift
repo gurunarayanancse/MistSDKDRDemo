@@ -45,6 +45,10 @@ class MistLocationManagerVM : NSObject,ObservableObject{
     func stopScanning(){
         indoorLocationManager?.stop()
     }
+    
+    deinit{
+        stopScanning()
+    }
 }
 
 
@@ -58,6 +62,7 @@ extension MistLocationManagerVM : IndoorLocationDelegate{
     /// will get called when the current location of the device gets updated it will return Mistpoint, with this one we can derive all the requied information like spatial coordinates, latitude and longidue and more.
     func didUpdateRelativeLocation(_ relativeLocation: MistPoint!) {
         
+        // Multiply x y coordinate with ppm and its scaleFactors, it will give the valid xy in pixels to be plotted on screen.
         let xWithPPM = relativeLocation.x * (mistMap?.ppm ?? 0) * scaleX
         let yWithPPM = relativeLocation.y * (mistMap?.ppm ?? 0) * scaleY
         
